@@ -28,6 +28,8 @@ def login():
             return "Invalid credentials"
     return render_template('login.html')
 
+
+
 # Dashboard
 @app.route('/dashboard')
 def dashboard():

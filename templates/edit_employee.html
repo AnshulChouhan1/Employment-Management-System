@@ -1,8 +1,32 @@
-<h2>Edit Employee</h2>
+<!-- <h2>Edit Employee</h2>
 <form method="post">
   Name: <input type="text" name="name" value="{{ employee[1] }}"><br>
   Age: <input type="number" name="age" value="{{ employee[2] }}"><br>
   Department: <input type="text" name="department" value="{{ employee[3] }}"><br>
   Salary: <input type="number" step="0.01" name="salary" value="{{ employee[4] }}"><br>
   <input type="submit" value="Update">
+</form> -->
+
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="mb-4">Edit Employee</h3>
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" value="{{ employee[1] }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Age</label>
+        <input type="number" class="form-control" name="age" value="{{ employee[2] }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <input type="text" class="form-control" name="department" value="{{ employee[3] }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Salary (₹)</label>
+        <input type="number" step="0.01" class="form-control" name="salary" value="{{ employee[4] }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Employee</button>
 </form>
+{% endblock %}

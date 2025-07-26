@@ -1,8 +1,32 @@
-<h2>Add Employee</h2>
+<!-- <h2>Add Employee</h2>
 <form method="post">
   Name: <input type="text" name="name"><br>
   Age: <input type="number" name="age"><br>
   Department: <input type="text" name="department"><br>
   Salary: <input type="number" step="0.01" name="salary"><br>
   <input type="submit" value="Add">
+</form> -->
+
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="mb-4">Add New Employee</h3>
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Age</label>
+        <input type="number" class="form-control" name="age" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <input type="text" class="form-control" name="department" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Salary (₹)</label>
+        <input type="number" step="0.01" class="form-control" name="salary" required>
+    </div>
+    <button type="submit" class="btn btn-success">Add Employee</button>
 </form>
+{% endblock %}
